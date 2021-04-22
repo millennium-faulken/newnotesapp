@@ -9,7 +9,7 @@ export const DELETE_NOTE = 'DELETE_NOTE';
 export const ERROR_DELETING = 'ERROR_DELETING';
 
 export const getNotes = () => {
-    const notes = axios.get(`https://frozen-scrubland-13109.herokuapp.com/notes`);
+    const notes = axios.get(`https://notes2021.herokuapp.com/notes`);
     return dispatch => {
       dispatch({ type: FETCH_NOTES });
       notes
@@ -30,7 +30,7 @@ export const getNotes = () => {
   };
 
   export const createNote = data => {
-    const notes = axios.post(`https://frozen-scrubland-13109.herokuapp.com/notes`, data);
+    const notes = axios.post(`https://notes2021.herokuapp.com/notes`, data);
       return dispatch => {
         notes
         .then(response=> {
@@ -46,7 +46,7 @@ export const getNotes = () => {
   };
 
   export const getNote = id => {
-    const note = axios.get(`https://frozen-scrubland-13109.herokuapp.com/notes/${id}`)
+    const note = axios.get(`https://notes2021.herokuapp.com/notes/${id}`)
     return dispatch => {
       note
       .then(response => {
@@ -60,7 +60,7 @@ export const getNotes = () => {
   };
 
   export const deleteNote = id => {
-    const note = axios.delete(`https://frozen-scrubland-13109.herokuapp.com/notes/${id}`);
+    const note = axios.delete(`https://notes2021.herokuapp.com/notes/${id}`);
       return dispatch => {
         dispatch({ type: DELETE_NOTE });
         note
