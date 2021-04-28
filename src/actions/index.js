@@ -9,7 +9,7 @@ export const DELETE_NOTE = 'DELETE_NOTE';
 export const ERROR_DELETING = 'ERROR_DELETING';
 
 export const getNotes = () => {
-    const notes = axios.get(`https://notes2021.herokuapp.com/notes`);
+    const notes = axios.get(`http://localhost:3333/notes`);
     return dispatch => {
       dispatch({ type: FETCH_NOTES });
       notes
@@ -30,7 +30,7 @@ export const getNotes = () => {
   };
 
   export const createNote = data => {
-    const notes = axios.post(`https://notes2021.herokuapp.com/notes`, data);
+    const notes = axios.post(`http://localhost:3333/notes`, data);
       return dispatch => {
         notes
         .then(response=> {
@@ -45,33 +45,32 @@ export const getNotes = () => {
       };
   };
 
-  export const getNote = id => {
-    const note = axios.get(`https://notes2021.herokuapp.com/notes/${id}`)
-    return dispatch => {
-      note
-      .then(response => {
-        console.log(response.data, "getNote")
-        dispatch({ type: FETCH_NOTE, payload: response.data });
-      })
-      .catch(error => {
-        console.error(error);
-      });
-    };
-  };
+  // export const getNote = id => {
+  //   const note = axios.get(`http://localhost:3333/note/${id}`)
+  //   return dispatch => {
+  //     note
+  //     .then(response => {
+  //       dispatch({ type: FETCH_NOTE, payload: response.data });
+  //     })
+  //     .catch(error => {
+  //       console.error(error);
+  //     });
+  //   };
+  // };
 
-  export const deleteNote = id => {
-    const note = axios.delete(`https://notes2021.herokuapp.com/notes/${id}`);
-      return dispatch => {
-        dispatch({ type: DELETE_NOTE });
-        note
-        .then(response=> {
-          dispatch(getNotes());
-        })
-        .catch(err => {
-          dispatch({
-            type: ERROR_DELETING,
-            payload: 'ERROR deleting Note'
-          });
-        });
-      };
-  };
+  // export const deleteNote = id => {
+  //   const note = axios.delete(`http://localhost:3333/notes/${id}`);
+  //     return dispatch => {
+  //       dispatch({ type: DELETE_NOTE });
+  //       note
+  //       .then(response=> {
+  //         dispatch(getNotes());
+  //       })
+  //       .catch(err => {
+  //         dispatch({
+  //           type: ERROR_DELETING,
+  //           payload: 'ERROR deleting Note'
+  //         });
+  //       });
+  //     };
+  // };

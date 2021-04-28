@@ -16,11 +16,11 @@ class NoteView extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
     this.props.getNote(id);
-    console.log(id, "id");
+    console.log(this.props.note.title)
+    console.log(this.props)
   }
 
   render() {
-    console.log(this.props);
     let modal = null;
     if (this.state.modal === true) {
       modal = (
