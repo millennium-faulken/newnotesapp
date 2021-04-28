@@ -1,10 +1,6 @@
-body {
-	background-image: url("https://images.unsplash.com/photo-1507123948929-86a949bdaa23?ixlib=rb-0.3.5&s=a6934be548e4b7e31398330a60ed51ea&auto=format&fit=crop&w=1972&q=80");
-}
-
 .bodyContent {
-	margin-top: 110px;
-	margin-left: 500px;
+	/* margin-top: 110px;
+	margin-left: 500px; */
 	-webkit-animation: fadeinout 3s linear forwards;
   animation: fadeinout 6s linear forwards;
 }
@@ -16,8 +12,8 @@ body {
 
 .welcome {
 	z-index: -5;
-	margin-top: -700px;
-	margin-left: 500px;
+	margin-top: -750px;
+	margin-left: 10%;
 }
 
 .welcome h1 {
@@ -38,11 +34,11 @@ body {
 }
 
 .notes1 {
-	margin-left: 50px;
+	margin-left: 1%;
 }
 
 .notes2 {
-	margin-left: 200px;
+	margin-left: 10%;
 }
 
 @keyframes fadein {

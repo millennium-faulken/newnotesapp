@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
+import './HomePage.css'
 
 class HomePage extends Component {
    
 
 render() {
   return ( 
-  				<div>
+  				<div className="mainHome">
 	  				<NavBar />
 					<div className="bodyContent">
 						<h1 className="words1">Letting</h1>
@@ -17,7 +18,7 @@ render() {
 					</div>
 					<div className="welcome">
 						<h1 className="notes">Welcome to...</h1>
-						<h1 className="notes1">Lambda</h1>
+						<h1 className="notes1">Your</h1>
 						<h1 className="notes2">Notes</h1>
 					</div>
 				</div>

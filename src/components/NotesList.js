@@ -18,17 +18,16 @@ class NotesList extends Component {
   render() {
     console.log(this.props, "noteslist")
     return (
-      <div><NavBar />
-        <div className="mainList">
-          <div className="listing">
-          {this.props.notes.map(note => 
-            <Link to={`/note/${note._id}`} key={note._id} className="noteList">
-              <div className="noteTitle">{note.title}</div>
-              <div className="divide"></div>
-              <div className="noteContent">{note.content}</div>
-            </Link>)}
+      <div>
+        <NavBar />
+        <div className="listing">
+        {this.props.notes.map(note => 
+          <Link to={`/note/${note._id}`} key={note._id} className="noteList">
+            <div className="noteTitle">{note.title}</div>
+            <div className="divide"></div>
+            <div className="noteContent">{note.content}</div>
+          </Link>)}
           </div>
-        </div>
       </div>
     );
   }
