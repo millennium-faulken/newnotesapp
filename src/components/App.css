@@ -1,8 +1,4 @@
 .App {
   height: 100vh;
-  background-image: url("./img/pic.jpg");
-  background-size: cover;
   overflow: hidden;
 }
-
-

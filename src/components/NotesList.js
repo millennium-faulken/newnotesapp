@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { getNotes } from '../actions';
-import { connect } from 'react-redux';
-import './NotesList.css';
-import { Link } from 'react-router-dom';
-import NavBar from './NavBar';
+import React, { Component } from "react";
+import { getNotes, deleteNote } from "../actions";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import NavBar from "./NavBar";
+import "./Notes.css";
 
 class NotesList extends Component {
   state = {
-    title: '',
-    content: ''
+    title: "",
+    content: "",
   };
 
   componentDidMount() {
@@ -16,29 +16,34 @@ class NotesList extends Component {
   }
 
   render() {
-    console.log(this.props, "noteslist")
     return (
-      <div>
+      <div className="mainNote">
         <NavBar />
         <div className="listing">
-        {this.props.notes.map(note => 
-          <Link to={`/note/${note._id}`} key={note._id} className="noteList">
-            <div className="noteTitle">{note.title}</div>
-            <div className="divide"></div>
-            <div className="noteContent">{note.content}</div>
-          </Link>)}
-          </div>
+          {this.props.notes.map((note) => (
+            <div className="singleNote">
+              <Link
+                to={`/note/${note._id}`}
+                key={note._id}
+                className="noteList"
+              >
+                <div className="noteTitle">{note.title}</div>
+                <div className="noteContent">{note.content}</div>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     notes: state.notes,
     fetchingNotes: state.fetchingNotes,
-    error: state.error
+    error: state.error,
   };
 };
 
-export default connect(mapStateToProps, { getNotes })(NotesList);
+export default connect(mapStateToProps, { getNotes, deleteNote })(NotesList);

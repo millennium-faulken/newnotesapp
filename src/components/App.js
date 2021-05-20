@@ -1,24 +1,17 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Route } from 'react-router-dom';
-import HomePage from './HomePage';
-import NotesList from './NotesList';
-import CreateNote from './CreateNote';
-import NoteView from './NoteView';
-// import LoginPage from './LoginPage';
-// import NavBar from './NavBar';
+import React, { Component } from "react";
+import "./App.css";
+import { Route } from "react-router-dom";
+import NotesList from "./NotesList";
+import CreateNote from "./CreateNote";
+import NoteView from "./NoteView";
 
 class App extends Component {
- 
   render() {
     return (
       <div className="App">
-          {/* <Route component={NavBar} /> */}
-          {/* <Route exact path="/" component={LoginPage} /> */}
-          <Route exact path="/" component={HomePage} />
-          <Route path="/notes" component={NotesList} />
-          <Route path="/create" component={CreateNote} />
-          <Route path="/note/:id" component={NoteView} />
+        <Route path="/notes" component={NotesList} />
+        <Route path="/create" component={CreateNote} />
+        <Route path="/note/:id" component={NoteView} />
       </div>
     );
   }

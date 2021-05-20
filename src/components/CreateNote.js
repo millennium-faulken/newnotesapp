@@ -7,7 +7,8 @@ import NavBar from './NavBar';
 class CreateNote extends Component {
   state = {
     title: '',
-    content: ''
+    content: '',
+    id: Number
   };
 
   render() {
